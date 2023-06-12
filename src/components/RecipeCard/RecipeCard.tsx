@@ -10,6 +10,7 @@ import StarIcon from '@mui/icons-material/Star';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { useAppDispatch } from '../../store/hooks';
 import { deleteRecipe, toggleFavorite } from '../../features/recipeSlice';
+import { Link } from 'react-router-dom';
 
 type Props = {
   id: string;
@@ -18,7 +19,7 @@ type Props = {
   ingredients: string;
   instructions: string;
   isFavorite?: boolean;
-  image?: File;
+  image?: string;
 }
 
 export const RecipeCard: FC<Props> = ({ title, description, id, isFavorite, ingredients, instructions, image }) => {
@@ -35,7 +36,7 @@ export const RecipeCard: FC<Props> = ({ title, description, id, isFavorite, ingr
       {image
         ? <CardMedia
           sx={{ height: 140 }}
-          image={URL.createObjectURL(image)}
+          image={image}
         />
         : <CardMedia
           sx={{ height: 140, backgroundSize: "contain" }}
@@ -77,7 +78,11 @@ export const RecipeCard: FC<Props> = ({ title, description, id, isFavorite, ingr
         onClick={handleToggleFavorite}
       />
       <CardActions>
-        <Button variant='contained' size="small">Learn More</Button>
+        <Link to={`recipe/${id}`}>
+          <Button sx={{ mr: 2 }} variant='contained' size="small">
+            Learn More
+          </Button>
+        </Link>
         <Button
           onClick={handleDelete}
           variant='contained'

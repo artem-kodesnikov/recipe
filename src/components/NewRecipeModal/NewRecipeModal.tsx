@@ -34,7 +34,7 @@ export const BasicModal = () => {
               description: '',
               ingredients: '',
               instructions: '',
-              image: undefined,
+              image: '',
             }}
             validationSchema={recipeValidationSchema}
             onSubmit={async (values: Recipe, { setSubmitting, resetForm }) => {
@@ -50,8 +50,9 @@ export const BasicModal = () => {
 
                 if (file) {
                   const imageURL = URL.createObjectURL(file);
+                  console.log(imageURL)
                   setPreview(imageURL);
-                  setFieldValue('image', file);
+                  setFieldValue('image', URL.createObjectURL(file));
                 }
               };
 

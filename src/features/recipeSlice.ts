@@ -1,4 +1,5 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "../store/store";
 
 export type Recipe = {
   id: string;
@@ -7,7 +8,7 @@ export type Recipe = {
   ingredients: string;
   instructions: string;
   isFavorite?: boolean;
-  image?: File;
+  image?: string;
 }
 
 export enum FilterOptions {
@@ -55,9 +56,15 @@ export const recipeSlice = createSlice({
     },
     setRecipeFilter(state, action: PayloadAction<FilterOptions>) {
       state.filter = action.payload;
-    }
+    },
   }
 })
+
+export const selectRecipeById = (recipeId: string) =>
+  createSelector(
+    (state: RootState) => state.recipe.recipeList,
+    (recipeList) => recipeList.find((recipe: Recipe) => recipe.id === recipeId)
+  );
 
 export const {addRecipe, deleteRecipe, toggleFavorite, setRecipeFilter} = recipeSlice.actions;
 
