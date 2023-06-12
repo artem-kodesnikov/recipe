@@ -13,8 +13,6 @@ export const RecipePage = () => {
     return <div>Recipe not found</div>;
   }
 
-
-
   return (
     <>
       <RecipePageHeader />

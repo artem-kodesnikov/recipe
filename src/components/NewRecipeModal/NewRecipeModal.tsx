@@ -50,7 +50,6 @@ export const BasicModal = () => {
 
                 if (file) {
                   const imageURL = URL.createObjectURL(file);
-                  console.log(imageURL)
                   setPreview(imageURL);
                   setFieldValue('image', URL.createObjectURL(file));
                 }

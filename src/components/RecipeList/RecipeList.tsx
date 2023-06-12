@@ -17,9 +17,6 @@ export const RecipeList = () => {
     return false;
   });
 
-  console.log(filteredRecipeList)
-
-
   return (
     <List dense sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', mb: 5 }}>
       {filteredRecipeList.map((recipe) =>
