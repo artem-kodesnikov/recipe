@@ -2,7 +2,7 @@ import React from 'react';
 import List from '@mui/material/List';
 import { useAppSelector } from '../../store/hooks';
 import { RecipeCard } from '../RecipeCard/RecipeCard';
-import { FilterOptions } from '../../features/recipeSlice';
+import { FilterOptions } from '../../types/Recipe.type';
 
 export const RecipeList = () => {
   const recipeList = useAppSelector(state => state.recipe.recipeList)

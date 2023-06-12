@@ -6,8 +6,9 @@ import { TextField } from 'formik-mui';
 import { style, StyledBackDrop, StyledButtonsBox, StyledDescriptionField, StyledField, StyledForm, StyledLabel } from './modal.style';
 import { Box, CircularProgress } from '@mui/material';
 import { useAppDispatch } from '../../store/hooks';
-import { addRecipe, Recipe } from '../../features/recipeSlice';
+import { addRecipe } from '../../features/recipeSlice';
 import { recipeValidationSchema } from '../../validation/RecipeValidation';
+import { Recipe } from '../../types/Recipe.type';
 
 export const BasicModal = () => {
   const [open, setOpen] = useState(false);

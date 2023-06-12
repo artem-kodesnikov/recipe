@@ -1,31 +1,10 @@
 import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store/store";
-
-export type Recipe = {
-  id: string;
-  title: string;
-  description: string;
-  ingredients: string;
-  instructions: string;
-  isFavorite?: boolean;
-  image?: string;
-}
-
-export enum FilterOptions {
-  All = 'all',
-  Favorites = 'favorites',
-}
-
-type RecipeState = {
-  recipeList: Recipe[];
-  filter: FilterOptions;
-}
-
+import { FilterOptions, Recipe, RecipeState } from "../types/Recipe.type";
 
 const initialState: RecipeState = {
   recipeList: [],
   filter: FilterOptions.All,
-
 }
 
 export const recipeSlice = createSlice({
