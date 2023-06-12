@@ -1,7 +1,7 @@
 import { Container } from '@mui/material';
 import React from 'react';
-import { Header } from './components/Header';
-import { RecipeList } from './components/RecipeList';
+import { Header } from './components/Header/Header';
+import { RecipeList } from './components/RecipeList/RecipeList';
 
 function App() {
   return (

@@ -5,6 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
+import { BasicModal } from '../NewRecipeModal/NewRecipeModal';
 
 export const Header = () => {
   return (
@@ -22,7 +23,7 @@ export const Header = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Recipe Manager
           </Typography>
-          <Button sx={{ mr: 2 }} variant="contained" color="success">New recipe</Button>
+          <BasicModal />
           <Button variant="contained" color="success">Logout</Button>
         </Toolbar>
       </AppBar>
